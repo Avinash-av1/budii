@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  font-family: Segoe UI, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 390px; /* iPhone 13 width */
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+button {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#yesBtn {
+  background: #ff2e63;
+  color: white;
+}
+
+#noBtn {
+  background: white;
+  color: #ff2e63;
+}
+
+/* Love message */
+#loveText {
+  display: none;
+  font-size: 1.6rem;
+  margin-top: 25px;
+  animation: pop 1s infinite alternate;
+}
+
+@keyframes pop {
+  from {transform: scale(1);}
+  to {transform: scale(1.1);}
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  color: rgba(255,255,255,0.8);
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+
+/* Fireworks */
+canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#yesBtn {
+  background: #ff2e63;
+  color: white;
+  box-shadow: 0 0 10px #ff2e63,
+              0 0 20px #ff2e63,
+              0 0 40px #ff2e63;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #ff2e63,
+                0 0 20px #ff2e63,
+                0 0 30px #ff2e63;
+  }
+  to {
+    box-shadow: 0 0 20px #ff2e63,
+                0 0 40px #ff2e63,
+                0 0 60px #ff2e63;
+  }
+}
